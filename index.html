@@ -24,7 +24,7 @@
                             <!-- Add a class to the address element for easier manipulation -->
                             <a href="#" class="d-none d-md-block address-link" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</a>
 
-                            <div id="mapOptions" style="display:none;position:fixed;bottom:0;width:100%;background:#fff;padding:10px;text-align:center;z-index:9999;">
+                            <div id="mapOptions" style="display:none;width:100%;background:#fff;padding:10px;text-align:center;z-index:9999;">
                                 <p>Select an option:</p>
                                 <button onclick="openAppleMaps()">Open in Apple Maps</button>
                                 <button onclick="openGoogleMaps()">Open in Google Maps</button>
@@ -81,7 +81,7 @@
             currentAddress = addressLink.innerHTML;
 
             // Show options
-            document.getElementById('mapOptions').style.display = 'block';
+            document.getElementById('mapOptions').classList.add = 'reveal-options';
         }
 
         function closeOptions() {
@@ -98,12 +98,12 @@
 
         function copyAddress() {
             var tempInput = document.createElement("input");
-            tempInput.value = currentAddress;
+            tempInput.value = "3021 N Broadway St, Unit 1, Chicago, IL 60657";
             document.body.appendChild(tempInput);
             tempInput.select();
             document.execCommand("copy");
             document.body.removeChild(tempInput);
-            alert("Address copied to clipboard: " + currentAddress);
+            alert("Address copied to clipboard: " + "3021 N Broadway St, Unit 1, Chicago, IL 60657");
             closeOptions();
         }
         </script>
