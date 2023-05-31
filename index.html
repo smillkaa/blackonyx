@@ -31,47 +31,12 @@
                                 <button onclick="copyAddress()">Copy Address</button>
                                 <button onclick="closeOptions()">Cancel</button>
                             </div>
-
-                            <script>
-                            var currentAddress = '';
-
-                            function showOptions(addressLink) {
-                                // Get the address value
-                                currentAddress = addressLink.innerHTML;
-
-                                // Show options
-                                document.getElementById('mapOptions').style.display = 'block';
-                            }
-
-                            function closeOptions() {
-                                document.getElementById('mapOptions').style.display = 'none';
-                            }
-
-                            function openAppleMaps() {
-                                window.location.href = 'https://maps.apple.com/?q=' + encodeURIComponent(currentAddress);
-                            }
-
-                            function openGoogleMaps() {
-                                window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(currentAddress);
-                            }
-
-                            function copyAddress() {
-                                var tempInput = document.createElement("input");
-                                tempInput.value = currentAddress;
-                                document.body.appendChild(tempInput);
-                                tempInput.select();
-                                document.execCommand("copy");
-                                document.body.removeChild(tempInput);
-                                alert("Address copied to clipboard: " + currentAddress);
-                                closeOptions();
-                            }
-                            </script>
                         </div>
                         <div>
                             <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" role="button" class="btn p-3 ms-auto">Book an Appointment</a>
                         </div>
                         <div class="d-block d-md-none">
-                            <address class="address-link mt-5 text-center">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</address>
+                            <a href="#" class="d-block d-md-none text-center address-link mt-5" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</a>
                         </div>
                        
                     </div>
@@ -108,5 +73,39 @@
     <script>
       AOS.init();
     </script>
+     <script>
+        var currentAddress = '';
+
+        function showOptions(addressLink) {
+            // Get the address value
+            currentAddress = addressLink.innerHTML;
+
+            // Show options
+            document.getElementById('mapOptions').style.display = 'block';
+        }
+
+        function closeOptions() {
+            document.getElementById('mapOptions').style.display = 'none';
+        }
+
+        function openAppleMaps() {
+            window.location.href = 'https://maps.apple.com/?q=' + encodeURIComponent(currentAddress);
+        }
+
+        function openGoogleMaps() {
+            window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(currentAddress);
+        }
+
+        function copyAddress() {
+            var tempInput = document.createElement("input");
+            tempInput.value = currentAddress;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Address copied to clipboard: " + currentAddress);
+            closeOptions();
+        }
+        </script>
 </body>
 </html>
