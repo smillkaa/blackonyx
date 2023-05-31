@@ -1,9 +1,17 @@
 @media screen and (max-width: 768px) {
     body {
-    background: url('../img/bg.JPG');
-    background-size: 200%;
-    background-position: top right;
+        background: url('../img/bg.JPG');
+        background-size: 200%;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+    }
+    .height-mobile {
+        height: 70vh;;
+    }
 }
+
+body {
+    height: 100vh;
 }
 
 * {
@@ -18,7 +26,7 @@
 h1 {
     font-weight: 400;
     font-style: normal;
-    font-size: 4.5rem;
+    font-size: 4rem;
 }
 
 .container {
