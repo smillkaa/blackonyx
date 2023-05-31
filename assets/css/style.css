@@ -1,7 +1,9 @@
-body {
+@media screen and (max-width: 768px) {
+    body {
     background: url('../img/bg.JPG');
     background-size: 200%;
-    background-position: bottom;
+    background-position: top right;
+}
 }
 
 * {
@@ -16,7 +18,7 @@ body {
 h1 {
     font-weight: 400;
     font-style: normal;
-    font-size: 7rem;
+    font-size: 5rem;
 }
 
 .container {
@@ -30,5 +32,9 @@ address {
 @media screen and (min-width: 768px) {
     h1 {
         font-size: 5rem;
+    }
+
+    .height-desktop {
+        min-height: 100vh;
     }
 }
