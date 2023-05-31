@@ -22,54 +22,50 @@
                     <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
                         <div>
                             <!-- Add a class to the address element for easier manipulation -->
-                            <address class="d-none d-md-block address-link">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</address>
+                            <a href="#" class="d-none d-md-block address-link" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</a>
+
+                            <div id="mapOptions" style="display:none;position:fixed;bottom:0;width:100%;background:#fff;padding:10px;text-align:center;z-index:9999;">
+                                <p>Select an option:</p>
+                                <button onclick="openAppleMaps()">Open in Apple Maps</button>
+                                <button onclick="openGoogleMaps()">Open in Google Maps</button>
+                                <button onclick="copyAddress()">Copy Address</button>
+                                <button onclick="closeOptions()">Cancel</button>
+                            </div>
 
                             <script>
-                            // Get all elements with the address-link class
-                            var addressLinks = document.querySelectorAll('.address-link');
+                            var currentAddress = '';
 
-                            // Iterate through each address link
-                            addressLinks.forEach(function(addressLink) {
-                                // Add click event listener to each address link
-                                addressLink.addEventListener('click', function(event) {
-                                // Prevent the default link behavior
-                                event.preventDefault();
-
+                            function showOptions(addressLink) {
                                 // Get the address value
-                                var address = addressLink.innerHTML;
+                                currentAddress = addressLink.innerHTML;
 
-                                // Open options based on the user's device and available apps
-                                if (navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)) {
-                                    // Open in Apple Maps
-                                    window.location.href = 'https://maps.apple.com/?q=' + encodeURIComponent(address);
-                                } else if (navigator.platform.match(/Android/i)) {
-                                    // Open in Google Maps
-                                    window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
-                                } else {
-                                    // Copy the address to the clipboard
-                                    copyToClipboard(address);
-                                }
-                                });
-                            });
+                                // Show options
+                                document.getElementById('mapOptions').style.display = 'block';
+                            }
 
-                            function copyToClipboard(address) {
-                                // Create a temporary input element
+                            function closeOptions() {
+                                document.getElementById('mapOptions').style.display = 'none';
+                            }
+
+                            function openAppleMaps() {
+                                window.location.href = 'https://maps.apple.com/?q=' + encodeURIComponent(currentAddress);
+                            }
+
+                            function openGoogleMaps() {
+                                window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(currentAddress);
+                            }
+
+                            function copyAddress() {
                                 var tempInput = document.createElement("input");
-                                tempInput.value = address;
+                                tempInput.value = currentAddress;
                                 document.body.appendChild(tempInput);
-
-                                // Copy the value to the clipboard
                                 tempInput.select();
                                 document.execCommand("copy");
-
-                                // Remove the temporary input element
                                 document.body.removeChild(tempInput);
-
-                                // Provide user feedback (optional)
-                                alert("Address copied to clipboard: " + address);
+                                alert("Address copied to clipboard: " + currentAddress);
+                                closeOptions();
                             }
                             </script>
-
                         </div>
                         <div>
                             <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" role="button" class="btn p-3 ms-auto">Book an Appointment</a>
