@@ -23,20 +23,12 @@
                         <div>
                             <!-- Add a class to the address element for easier manipulation -->
                             <a href="#" class="d-none d-md-block address-link" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</a>
-
-                            <div id="mapOptions" style="display:none;width:100%;background:#fff;padding:10px;text-align:center;z-index:9999;">
-                                <p>Select an option:</p>
-                                <button onclick="openAppleMaps()">Open in Apple Maps</button>
-                                <button onclick="openGoogleMaps()">Open in Google Maps</button>
-                                <button onclick="copyAddress()">Copy Address</button>
-                                <button onclick="closeOptions()">Cancel</button>
-                            </div>
                         </div>
                         <div>
                             <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" role="button" class="btn p-3 ms-auto">Book an Appointment</a>
                         </div>
                         <div class="d-block d-md-none">
-                            <a href="#" class="d-block d-md-none text-center address-link mt-5" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</a>
+                            <address class="d-block d-md-none text-center address-link mt-5" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</address>
                         </div>
                        
                     </div>
@@ -65,6 +57,19 @@
                     
                     
                     <h1 data-aos="zoom-in" data-aos-duration="1500" class="text-center">Black Onyx</h1>
+                </div>
+                <div class="p-5"id="mapOptions" style="display:none;width:100%;background:#fff;z-index:9999;">
+                    <div class="row justify-content-between align-items-top">
+                        <div class="col-9">
+                            <p class="text-center">Select an option:</p>
+                            <button class="btn option-btn" onclick="openAppleMaps()">Open in Apple Maps</button>
+                            <button class="btn mt-3 option-btn" onclick="openGoogleMaps()">Open in Google Maps</button>
+                            <button class="btn me-auto option-btn mt-3" onclick="copyAddress()">Copy Address</button>
+                        </div>
+                        <div class="col-2 ms-auto">
+                            <button class="btn" onclick="closeOptions()">X</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
