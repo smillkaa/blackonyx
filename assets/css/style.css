@@ -1,0 +1,34 @@
+body {
+    background: url('../img/bg.JPG');
+    background-size: 200%;
+    background-position: bottom;
+}
+
+* {
+    font-family: "ivymode", sans-serif;
+}
+
+.btn {
+    border: 1px black solid;
+    border-radius: 0px;
+}
+
+h1 {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 7rem;
+}
+
+.container {
+    margin: 0;
+}
+
+address {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 5rem;
+    }
+}
