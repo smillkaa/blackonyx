@@ -12,105 +12,55 @@
     
 </head>
 <body>
-    <main>
-        <div>
-            <div class="d-block d-md-flex row align-items-top height-desktop">
-                <div class="d-none d-md-block col-12 col-md-7 p-0" style="background: url('assets/img/bg.JPG'); background-size: cover; background-position: center;">
-                   
-                </div>
-                <div class="col-12 col-md-5 p-5 d-flex flex-column justify-content-between height-mobile" style="background: rgba(255, 255, 255, 1); box-shadow: 0px 0px 20px black;">
-                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                        <div>
-                            <!-- Add a class to the address element for easier manipulation -->
-                            <a href="#" class="d-none d-md-block address-link" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</a>
-                        </div>
-                        <div>
-                            <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" role="button" class="btn p-3 ms-auto">Book an Appointment</a>
-                        </div>
-                        <div class="d-block d-md-none">
-                            <address class="d-block d-md-none text-center address-link mt-5" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br>Chicago, IL 60657</address>
-                        </div>
-                       
-                    </div>
-                    <!-- star -->
-                    <style>
-                        @keyframes float {
-                            0% {
-                                transform: translateY(0);
-                            }
-                            50% {
-                                transform: translateY(-10px);
-                            }
-                            100% {
-                                transform: translateY(0);
-                            }
-                        }
-                    
-                        .float-star {
-                            animation: float 5s ease-in-out infinite;
-                        }
-                    </style>
-                    
-                    <div class="mt-auto mx-auto">
-                        <img class="float-star" style="width:200px; height: 200px;" src="assets/img/starv2.png" alt="">
-                    </div>
-                    
-                    
-                    <h1 data-aos="zoom-in" data-aos-duration="1500" class="text-center">Black Onyx</h1>
-                </div>
-                <div class="p-5"id="mapOptions" style="display:none;width:100%;background:#fff;z-index:9999;">
-                    <div class="row justify-content-between align-items-top">
-                        <div class="col-9">
-                            <p class="text-center">Select an option:</p>
-                            <button class="btn option-btn" onclick="openAppleMaps()">Open in Apple Maps</button>
-                            <button class="btn mt-3 option-btn" onclick="openGoogleMaps()">Open in Google Maps</button>
-                            <button class="btn me-auto option-btn mt-3" onclick="copyAddress()">Copy Address</button>
-                        </div>
-                        <div class="col-2 ms-auto">
-                            <button class="btn" onclick="closeOptions()">X</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <main class="p-3" style="min-height: 100vh;">
+    <div class="d-none d-md-flex row">
+        <address class="p-4 text-center text-uppercase address-link" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br> Chicago, IL 60657</address>
+    </div>
+    <div class="d-block d-md-flex row align-items-center">
+        <div class="d-none d-md-block fw-bolder col-4 text-center" style="font-size:2rem;">BLACK ONYX</div>
+        <div class="col-12 col-md-4 p-2 my-auto mx-auto img">
+            <img class="w-100" src="assets/img/bg.jpg" alt="" style="box-shadow: 0 0 20px rgb(123, 123, 123);">
         </div>
-    </main>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-     <script>
-        var currentAddress = '';
+        <div class="d-none d-md-block fw-bolder col-4 text-center" style="font-size: 2rem;">NAIL DESIGN</div>
+    </div>
+    <div class="d-none d-md-flex row justify-content-center mt-5">
+        <div style="position: relative; bottom: 10px;" class="px-2 col-4 d-flex justify-content-between align-items-center">
 
-        function showOptions(addressLink) {
-            // Get the address value
-            currentAddress = addressLink.innerHTML;
+            <div class="d-flex align-items-center justify-content-center ps-0">
+                <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" class="w-100 p-3 px-4 text-uppercase text-center" style="text-decoration: none; font-weight: 900; border: 1px black solid; min-width: 220px;">book online</a>
+            </div>
 
-            // Show options
-            document.getElementById('mapOptions').classList.add = 'reveal-options';
-        }
+            <div class="d-flex align-items-center justify-content-center pe-0">
+                <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" class="text-center w-100 p-3 px-4 text-uppercase " style="text-decoration: none; font-weight: 900; border: 1px black solid; min-width: 220px;">gift card</a>
+            </div>
 
-        function closeOptions() {
-            document.getElementById('mapOptions').style.display = 'none';
-        }
+        </div>
+    </div>
 
-        function openAppleMaps() {
-            window.location.href = 'https://maps.apple.com/?q=' + encodeURIComponent(currentAddress);
-        }
+    <!-- text -->
+    <div class="d-flex flex-column justify-content-between" style="min-height: 50vh;">
+        <!-- title -->
+        <div class="d-block d-md-none">
+            <div class="text-center mb-0 fw-bolder" style="font-size: 3.6rem;">BLACK ONYX</div>
+            <div class="text-end mb-0 me-2 fw-bolder" style="font-size: 2rem;">NAIL DESIGN</div>
+        </div>
 
-        function openGoogleMaps() {
-            window.location.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(currentAddress);
-        }
+        <!-- address and buttons -->
+        <address class="d-block d-md-none p-5 text-center text-uppercase address-link" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br> Chicago, IL 60657</address>
+        <div style="position: relative; bottom: 10px;" class="d-flex d-md-none flex-column justify-content-center align-items-center">
 
-        function copyAddress() {
-            var tempInput = document.createElement("input");
-            tempInput.value = "3021 N Broadway St, Unit 1, Chicago, IL 60657";
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            alert("Address copied to clipboard: " + "3021 N Broadway St, Unit 1, Chicago, IL 60657");
-            closeOptions();
-        }
-        </script>
+            <div class="mb-4 d-flex align-items-center justify-content-center">
+                <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" class="w-100 p-3 px-4 text-uppercase text-center" style="text-decoration: none; font-weight: 900; border: 1px black solid; min-width: 200px;">book online</a>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" class="text-center w-100 p-3 px-4 text-uppercase " style="text-decoration: none; font-weight: 900; border: 1px black solid; min-width: 200px;">gift card</a>
+            </div>
+
+        </div>
+            
+          
+    </div>
+  </main>
 </body>
 </html>

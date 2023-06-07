@@ -1,21 +1,10 @@
-@media screen and (max-width: 768px) {
-    body {
-        background: url('../img/bg.JPG');
-        background-size: 200%;
-        background-position: bottom right;
-        background-repeat: no-repeat;
-    }
-    .height-mobile {
-        height: 70vh;;
-    }
-}
-
 body {
     height: 100vh;
+    background: #eeede9;
 }
 
 * {
-    font-family: "ivymode", sans-serif;
+    font-family: "IvyMode", sans-serif;
 }
 
 a {
@@ -30,7 +19,7 @@ a {
 h1 {
     font-weight: 400;
     font-style: normal;
-    font-size: 4rem;
+    font-size: 1.5rem;
 }
 
 .container {
@@ -46,16 +35,7 @@ h1 {
     min-width: 100%;
 }
 
-address {
-    text-decoration: underline;
-}
 
 @media screen and (min-width: 768px) {
-    h1 {
-        font-size: 5rem;
-    }
 
-    .height-desktop {
-        min-height: 100vh;
-    }
 }
