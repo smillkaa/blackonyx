@@ -12,23 +12,46 @@
     
 </head>
 <body>
-  <main class="p-3" style="min-height: 100vh;">
-    <!-- img -->
-    <div class="col-12 p-2">
-        <img class="w-100" src="assets/img/bg.jpg" alt="" style="box-shadow: 0 0 20px rgb(123, 123, 123);">
+  <main class="p-3 d-flex" style="min-height: 100vh;">
+    <div class="d-block d-md-flex row align-items-center">
+        <div class="d-none d-md-block fw-bolder text-center col-4">
+            <h1 style="font-size:2rem;">BLACK ONYX</h1>
+            <h1 style="font-size:1.4rem;">NAIL DESIGN</h1>
+        </div>
+        
+        <div class="col-12 col-md-4 p-2 my-auto mx-auto img">
+            <img class="w-100" src="assets/img/bg.jpg" alt="" style="box-shadow: 0 0 20px rgb(123, 123, 123);">
+        </div>
+
+        <div class="d-none d-md-block col-4">
+            <address class="p-5 text-center text-uppercase address-link" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br> Chicago, IL 60657</address>
+            <div style="position: relative; bottom: 10px;" class="d-flex flex-column justify-content-center align-items-center">
+    
+                <div class="mb-4 d-flex align-items-center justify-content-center">
+                    <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" class="w-100 p-3 px-4 text-uppercase text-center" style="text-decoration: none; font-weight: 900; border: 1px black solid; min-width: 200px;">book online</a>
+                </div>
+    
+                <div class="d-flex align-items-center justify-content-center">
+                    <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" class="text-center w-100 p-3 px-4 text-uppercase " style="text-decoration: none; font-weight: 900; border: 1px black solid; min-width: 200px;">gift card</a>
+                </div>
+    
+            </div>
+        </div>
+       
     </div>
+
 
     <!-- text -->
     <div class="d-flex flex-column justify-content-between" style="min-height: 50vh;">
         <!-- title -->
-        <div>
+        <div class="d-block d-md-none">
             <div class="text-center mb-0 fw-bolder" style="font-size: 3.6rem;">BLACK ONYX</div>
-            <div class="text-end mb-0 me-2 fw-bolder" style="font-size: 2rem;">NAIL DESIGN</span></div>
+            <div class="text-end mb-0 me-2 fw-bolder" style="font-size: 2rem;">NAIL DESIGN</div>
         </div>
 
-        <!-- everything else -->
-            <address class="p-5 text-center text-uppercase address-link" onclick="showOptions(this)">3021 N Broadway St, Unit 1, Chicago, IL 60657</address>
-        <div style="position: relative; bottom: 10px;" class="d-flex flex-column justify-content-center align-items-center">
+        <!-- address and buttons -->
+        <address class="d-block d-md-none p-5 text-center text-uppercase address-link" onclick="showOptions(this)">3021 N Broadway St, Unit 1<br> Chicago, IL 60657</address>
+        <div style="position: relative; bottom: 10px;" class="d-flex d-md-none flex-column justify-content-center align-items-center">
 
             <div class="mb-4 d-flex align-items-center justify-content-center">
                 <a href="https://booksy.com/en-us/182059_black-onyx_nail-salon_18229_chicago" class="w-100 p-3 px-4 text-uppercase text-center" style="text-decoration: none; font-weight: 900; border: 1px black solid; min-width: 200px;">book online</a>
