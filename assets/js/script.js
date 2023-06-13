@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // Array of image filenames
     var images = [
-      'cover.JPG',
+      'cover.jpg',
       'cover2.jpg',
       'cover3.jpg',
       'cover4.jpg'
